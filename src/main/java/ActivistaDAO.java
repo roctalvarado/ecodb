@@ -113,7 +113,7 @@ public class ActivistaDAO implements IActivistaDAO {
         String sql = """
                 SELECT id, nombre, apellido_paterno, apellido_materno, telefono, fecha_inicio_colaboracion
                 FROM activista
-                ORDER BY id DESC
+                ORDER BY id
                 """;
         List<Activista> lista = new ArrayList<>();
 
