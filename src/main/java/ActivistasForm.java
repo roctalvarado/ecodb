@@ -232,13 +232,7 @@ public class ActivistasForm {
     // -------------------------
 
     public static void main(String[] args) {
-        // Ajusta credenciales
-        String url = "jdbc:mysql://localhost:3306/eco_activistas_JDBC?useSSL=false&serverTimezone=UTC";
-        String user = "root";
-        String pass = "admin"; // tu contraseña si aplica
-
-        IConexionBD conexion = new ConexionBD(url, user, pass);
-        IActivistaDAO dao = new ActivistaDAO(conexion);
+        IActivistaDAO dao = new ActivistaDAO();
 
         ActivistasForm form = new ActivistasForm(dao);
         form.iniciar();

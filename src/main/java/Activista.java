@@ -1,17 +1,33 @@
 import java.time.LocalDate;
 import java.util.Objects;
+import jakarta.persistence.*;
 
 /**
  * 
  * @author josel
  */
+
+@Entity
+@Table(name = "activista")
 public class Activista {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
+
+    @Column(name = "apellido_paterno", nullable = false, length = 100)
     private String apellidoPaterno;
+
+    @Column(name = "apellido_materno", length = 100)
     private String apellidoMaterno;
+
+    @Column(name = "telefono", nullable = false, length = 20)
     private String telefono;
-    private LocalDate fechaInicio; // en el diagrama dice fechaInicio: String, pero es mejor LocalDate
+
+    @Column(name = "fecha_inicio_colaboracion", nullable = false)
+    private LocalDate fechaInicio;
 
     public Activista() {}
 

@@ -27,9 +27,7 @@ public class ActivistasUI extends javax.swing.JFrame {
         initComponents();
         
         // Conexión
-        String url = "jdbc:mysql://localhost:3306/eco_activistas_JDBC?useSSL=false&serverTimezone=UTC";
-        IConexionBD conexion = new ConexionBD(url, "root", "admin");
-        activistaDAO = new ActivistaDAO(conexion);
+        activistaDAO = new ActivistaDAO();
         
         mostrarDatos();
         
